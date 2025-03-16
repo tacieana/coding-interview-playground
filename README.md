@@ -31,7 +31,7 @@ This repository is where I solve and store algorithmic problems from platforms l
     - 🏆 How my solution **beats other submissions** in terms of runtime and memory usage (shown in percentage), exactly as LeetCode presents it.
 
 - [`dataStructuresProblems/src/main/java/hackerrank`](./dataStructuresProblems/src/main/java/hackerrank):  
-  Solutions and implementations for HackerRank challenges.
+  Solutions and implementations for **HackerRank** challenges.
 
 - [`dataStructuresProblems/src/main/java/crackingCodeInterview`](./dataStructuresProblems/src/main/java/crackingCodeInterview):  
   Solutions to problems from the famous book **"Cracking the Coding Interview"**.

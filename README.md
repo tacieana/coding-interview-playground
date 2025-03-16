@@ -13,8 +13,11 @@ This repository is where I solve and store algorithmic problems from platforms l
 
 ## 📂 Project Structure (packages explained):
 
+- [`dataStructuresProblems`](./dataStructuresProblems):  
+  Root package of java project.
+
 - [`dataStructuresProblems/src/main/java/theoryexamples`](./dataStructuresProblems/src/main/java/theoryexamples):  
-  Implementations and examples of data structures.
+  Implementations and notes about specific data structures.
 
 - [`dataStructuresProblems/src/main/java/model`](./dataStructuresProblems/src/main/java/model):  
   Commonly used DTO or model classes for problem-solving.
@@ -28,10 +31,10 @@ This repository is where I solve and store algorithmic problems from platforms l
     - 🏆 How my solution **beats other submissions** in terms of runtime and memory usage (shown in percentage), exactly as LeetCode presents it.
 
 - [`dataStructuresProblems/src/main/java/hackerrank`](./dataStructuresProblems/src/main/java/hackerrank):  
-  HackerRank challenge solutions.
+  Solutions and implementations for HackerRank challenges.
 
 - [`dataStructuresProblems/src/main/java/crackingCodeInterview`](./dataStructuresProblems/src/main/java/crackingCodeInterview):  
-  Problems from the book **"Cracking the Coding Interview"**.
+  Solutions to problems from the famous book **"Cracking the Coding Interview"**.
 
 
 ### 🛠️ Topics Covered:

@@ -1,14 +1,13 @@
 package hackerrank;
 
-public class BomaryTreeHeight {
-    public static void main(String[] args) {
-    }
+public class BinaryTreeHeight {
 
     class Node {
         public int value;
         public Node left;
         public Node right;
     }
+
     private static int getHeight(Node node) {
         if(node == null || (node.left == null && node.right == null)) {
             return 0;

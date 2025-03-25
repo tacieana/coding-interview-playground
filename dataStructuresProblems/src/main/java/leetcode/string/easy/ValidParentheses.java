@@ -2,6 +2,7 @@ package leetcode.string.easy;
 
 import java.util.Stack;
 
+// Runtime: 42.04% / Memory: 65.69%
 public class ValidParentheses {
 
     public boolean isValid(String s) {
@@ -26,11 +27,15 @@ public class ValidParentheses {
     }
 
     private boolean isOpenCloseCorrect(char open, char close) {
-        switch(open) {
-            case '(': return close == ')';
-            case '[': return close == ']';
-            case '{': return close == '}';
-            default: return false;
+        switch (open) {
+            case '(':
+                return close == ')';
+            case '[':
+                return close == ']';
+            case '{':
+                return close == '}';
+            default:
+                return false;
         }
     }
 

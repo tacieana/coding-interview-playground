@@ -12,14 +12,14 @@ public class BalancedBinaryTree {
     // Runtime beats 27.19%
     // Memory beats 73.37%
     public boolean isBalanced(TreeNode root) {
-        if (root == null){
+        if (root == null) {
             return true;
         }
 
         int leftDepth = calcMaxDepth(root.left);
         int rightDepth = calcMaxDepth(root.right);
 
-        if (Math.abs(leftDepth-rightDepth) >= 2) {
+        if (Math.abs(leftDepth - rightDepth) >= 2) {
             return false;
         }
 

@@ -7,9 +7,9 @@ import java.util.List;
 public class TheKthFactor {
 
     public int kthFactor(int n, int k) {
-        List<Integer> factors = new ArrayList();
+        List<Integer> factors = new ArrayList<>();
 
-        int i=1;
+        int i = 1;
         while (i <= n && factors.size() < k) {
             if (n % i == 0) {
                 factors.add(i);
@@ -18,7 +18,7 @@ public class TheKthFactor {
         }
 
         if (factors.size() >= k) {
-            return factors.get(k-1);
+            return factors.get(k - 1);
         }
         return -1;
     }

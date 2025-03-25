@@ -1,13 +1,38 @@
 package leetcode.hashtables.easy;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Hashtable;
 import java.util.List;
 
 /* Given two integer arrays nums1 and nums2, return an array of their intersection.
 Each element in the result must be unique, you may return the result in any order. */
 public class IntersectionOfTwoArrays {
+
+    // Runtime Beats 96.69% / Memory beats 61.16%
+    public int[] hashSetSolution(int[] nums1, int[] nums2) {
+
+        HashSet<Integer> hashSetNum1 = new HashSet<>();
+        HashSet<Integer> intersection = new HashSet<>();
+
+        for (int j : nums1) {
+            hashSetNum1.add(j);
+        }
+
+        for (int j : nums2) {
+            if (hashSetNum1.contains(j)) {
+                intersection.add(j);
+            }
+        }
+
+        int[] answer = new int[intersection.size()];
+        int i = 0;
+
+        for (var currentNumber : intersection) {
+            answer[i++] = currentNumber;
+        }
+        return answer;
+    }
 
     // Runtime Beats 14.41% / Memory beats 5.82%
     public int[] bruteForce(int[] nums1, int[] nums2) {
@@ -16,8 +41,8 @@ public class IntersectionOfTwoArrays {
         int[] lower;
         List<Integer> intersection = new ArrayList<>();
 
-        Hashtable<Integer, Integer> hashtableBigger = new Hashtable<>();
-        Hashtable<Integer, Integer> hashtableLower = new Hashtable<>();
+        HashMap<Integer, Integer> hashtableBigger = new HashMap<>();
+        HashMap<Integer, Integer> hashtableLower = new HashMap<>();
 
         if (nums1.length > nums2.length) {
             bigger = nums1;
@@ -30,7 +55,7 @@ public class IntersectionOfTwoArrays {
         for (int i = 0; i < bigger.length; i++) {
             hashtableBigger.put(bigger[i], i);
 
-            if(i < lower.length) {
+            if (i < lower.length) {
                 hashtableLower.put(lower[i], i);
             }
         }
@@ -42,30 +67,5 @@ public class IntersectionOfTwoArrays {
         }
 
         return intersection.stream().mapToInt(Integer::intValue).toArray();
-    }
-
-    // Runtime Beats 96.69% / Memory beats 61.16%
-    public int[] hashSetSolution(int[] nums1, int[] nums2) {
-
-        HashSet<Integer> hashSetNum1 = new HashSet<>();
-        HashSet<Integer> intersection = new HashSet<>();
-
-        for (int i = 0; i < nums1.length; i++) {
-            hashSetNum1.add(nums1[i]);
-        }
-
-        for (int i = 0; i < nums2.length; i++) {
-            if (hashSetNum1.contains(nums2[i])) {
-                intersection.add(nums2[i]);
-            }
-        }
-
-        int answer[] = new int[intersection.size()];
-        int i = 0;
-
-        for(var currentNumber : intersection){
-            answer[i++] = currentNumber;
-        }
-        return answer;
     }
 }

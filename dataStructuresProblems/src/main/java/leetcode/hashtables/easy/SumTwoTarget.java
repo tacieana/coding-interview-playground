@@ -18,8 +18,8 @@ public class SumTwoTarget {
         for (int i = 0; i < nums.length; i++) {
             int complement = target - nums[i];
 
-            if(hashtable.containsKey(complement)) {
-                return new int[]{(int)hashtable.get(complement),i};
+            if (hashtable.containsKey(complement)) {
+                return new int[]{(int) hashtable.get(complement), i};
             }
             hashtable.put(nums[i], i);
         }

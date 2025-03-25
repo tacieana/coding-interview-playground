@@ -1,4 +1,4 @@
-package crackingCodeInterview;
+package crackingcodeinterview;
 
 import java.util.HashMap;
 
@@ -7,7 +7,7 @@ What if you cannot use additional data structures?
  */
 public class UniqueString {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 
         System.out.println("Must be true: " + hashMapSolution("abcderfgkotl"));
         System.out.println("Must be false: " + hashMapSolution("taciana"));

@@ -2,6 +2,7 @@ package leetcode.binarytree.hard;
 
 import leetcode.binarytree.classes.TreeNode;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -24,27 +25,23 @@ public class Codec {
         if (root == null) {
             return "null";
         }
-        StringBuilder builder = new StringBuilder();
-        builder.append(root.val);
-        builder.append(",");
-        builder.append(serialize(root.left));
-        builder.append(",");
-        builder.append(serialize(root.right));
-        return builder.toString();
+        return root.val +
+                "," +
+                serialize(root.left) +
+                "," +
+                serialize(root.right);
     }
 
     public TreeNode deserialize(String data) {
 
         Queue<String> fila = new LinkedList<>();
-        for(String value : data.split(",")) {
-            fila.add(value);
-        }
+        Collections.addAll(fila, data.split(","));
         return deserializeQueue(fila);
     }
 
     private TreeNode deserializeQueue(Queue<String> queue) {
         String actualValue = queue.poll();
-        if(actualValue == null || actualValue.equals("null")) {
+        if (actualValue == null || actualValue.equals("null")) {
             return null;
         }
         return new TreeNode(

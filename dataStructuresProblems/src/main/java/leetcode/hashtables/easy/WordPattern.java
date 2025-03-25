@@ -17,7 +17,7 @@ public class WordPattern {
 
         String[] sSplited = s.split(" ");
 
-        if(sSplited.length != pattern.length()) {
+        if (sSplited.length != pattern.length()) {
             return false;
         }
 
@@ -29,7 +29,7 @@ public class WordPattern {
 
             if ((hashMapPattern.containsKey(actualChar)
                     && (!hashMapPattern.get(actualChar).equals(sSplited[i])))
-                || (hashMapString.containsKey(sSplited[i])
+                    || (hashMapString.containsKey(sSplited[i])
                     && !hashMapString.get(sSplited[i]).equals(actualChar))) {
                 return false;
             }

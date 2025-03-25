@@ -28,7 +28,7 @@ public class RansomNote {
                 if (count == 1) {
                     letters.remove(ransomNote.charAt(i));
                 } else {
-                    letters.put(ransomNote.charAt(i), count-1);
+                    letters.put(ransomNote.charAt(i), count - 1);
                 }
             }
         }

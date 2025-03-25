@@ -15,7 +15,7 @@ public class ArrayQuickSort {
     }
 
     private static void quickSort(int[] array, int lowerIndex, int highIndex) {
-        if(lowerIndex >= highIndex) return;
+        if (lowerIndex >= highIndex) return;
 
         int left = partition(array, lowerIndex, highIndex);
 
@@ -25,13 +25,15 @@ public class ArrayQuickSort {
     }
 
     private static int partition(int[] array, int lowerIndex, int highIndex) {
-        int pivot = array[highIndex], left = lowerIndex, right = highIndex;
+        int pivot = array[highIndex];
+        int left = lowerIndex;
+        int right = highIndex;
 
-        while(left < right) {
-            while(array[left] <= pivot && left < right) {
+        while (left < right) {
+            while (array[left] <= pivot && left < right) {
                 left++;
             }
-            while(array[right] >= pivot && right > left) {
+            while (array[right] >= pivot && right > left) {
                 right--;
             }
             swap(array, left, right);

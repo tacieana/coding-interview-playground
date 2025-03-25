@@ -21,6 +21,7 @@ public class ValidateBinarySearchTree {
 
         return node.val < val && allLower(node.left, val) && allLower(node.right, val);
     }
+
     private boolean allGreater(TreeNode node, int val) {
         if (node == null) return true;
 

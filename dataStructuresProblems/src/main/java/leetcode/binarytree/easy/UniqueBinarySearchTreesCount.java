@@ -10,7 +10,7 @@ public class UniqueBinarySearchTreesCount {
 
     private final BigInteger ONE = BigInteger.valueOf(1);
     private final BigInteger TWO = BigInteger.valueOf(2);
-    private HashMap<BigInteger,BigInteger> factorials = new HashMap();
+    private final HashMap<BigInteger, BigInteger> factorials = new HashMap();
 
     public int numTrees(int n) {
         BigInteger nBig = BigInteger.valueOf(n);
@@ -21,7 +21,7 @@ public class UniqueBinarySearchTreesCount {
     }
 
     public BigInteger factorial(BigInteger n) {
-        if(!factorials.containsKey(n)) {
+        if (!factorials.containsKey(n)) {
             if (n.compareTo(ONE) <= 0) {
                 factorials.put(n, ONE);
             } else {

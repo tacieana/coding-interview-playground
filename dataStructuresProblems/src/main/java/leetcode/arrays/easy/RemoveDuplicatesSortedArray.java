@@ -16,6 +16,19 @@ The remaining elements of nums are not important as well as the size of nums. Re
  */
 public class RemoveDuplicatesSortedArray {
 
+    // Runtime 100.00% / Memory 42.36%
+    public static int removeDuplicates(int[] nums) {
+
+        int i = 0;
+        for (int j = 1; j < nums.length; j++) {
+            if (nums[i] != nums[j]) {
+                i++;
+                nums[i] = nums[j];
+            }
+        }
+        return i + 1;
+    }
+
     // Runtime 5ms - 7.29% / Memory 45.54MB - 7.04%
     public int removeDuplicatesBruteForce(int[] nums) {
         List<Integer> list = new ArrayList();
@@ -25,22 +38,9 @@ public class RemoveDuplicatesSortedArray {
 
         list = new ArrayList(new LinkedHashSet(list));
 
-        for (int i=0; i < list.size(); i++) {
+        for (int i = 0; i < list.size(); i++) {
             nums[i] = list.get(i);
         }
         return list.size();
-    }
-
-    // Runtime 100.00% / Memory 42.36%
-    public static int removeDuplicates(int[] nums) {
-
-        int i = 0;
-        for (int j = 1; j < nums.length; j++) {
-            if(nums[i] != nums[j]) {
-                i++;
-                nums[i] = nums[j];
-            }
-        }
-        return i+1;
     }
 }

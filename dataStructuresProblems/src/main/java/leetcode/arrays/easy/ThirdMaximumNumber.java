@@ -1,6 +1,9 @@
 package leetcode.arrays.easy;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.PriorityQueue;
 
 /*
 Given an integer array nums, return the third distinct maximum number in this array. If the third maximum does not exist, return the maximum number.

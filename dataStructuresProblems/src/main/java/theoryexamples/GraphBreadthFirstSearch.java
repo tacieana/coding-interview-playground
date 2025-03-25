@@ -1,17 +1,18 @@
 package theoryexamples;
 
 
+import model.Vertex;
+
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
-
-import model.Vertex;
 
 public class GraphBreadthFirstSearch {
 
     private Vertex<Integer> root;
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Vertex<Integer> v0 = new Vertex<>(0);
         Vertex<Integer> v1 = new Vertex<>(1);
         Vertex<Integer> v2 = new Vertex<>(2);
@@ -20,26 +21,26 @@ public class GraphBreadthFirstSearch {
         Vertex<Integer> v5 = new Vertex<>(5);
         Vertex<Integer> v6 = new Vertex<>(6);
 
-        v0.setNeighbors(Arrays.asList(v1,v2));
-        v1.setNeighbors(Arrays.asList(v3,v4));
-        v4.setNeighbors(Arrays.asList(v5,v6));
-        v6.setNeighbors(Arrays.asList(v0));
+        v0.setNeighbors(Arrays.asList(v1, v2));
+        v1.setNeighbors(Arrays.asList(v3, v4));
+        v4.setNeighbors(Arrays.asList(v5, v6));
+        v6.setNeighbors(List.of(v0));
 
         GraphBreadthFirstSearch graphBreadthFirstSearch = new GraphBreadthFirstSearch();
         graphBreadthFirstSearch.printValueBreadthFirstSearch(v0);
     }
 
-    private void printValueBreadthFirstSearch(Vertex root) {
+    private void printValueBreadthFirstSearch(Vertex<Integer> root) {
         this.root = root;
         this.traverse();
     }
 
     private void traverse() {
-        Queue<Vertex> queue = new LinkedList<>();
+        Queue<Vertex<Integer>> queue = new LinkedList<>();
         queue.add(this.root);
 
         while (!queue.isEmpty()) {
-            Vertex current = queue.poll();
+            Vertex<Integer> current = queue.poll();
 
             if (!current.isVisited()) {
                 System.out.println(current.getValue());

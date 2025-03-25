@@ -1,15 +1,18 @@
 package hackerrank;
 
+import lombok.Getter;
+
 public class BinaryTreeHeight {
 
     class Node {
-        public int value;
-        public Node left;
-        public Node right;
+        @Getter
+        private int value;
+        private Node left;
+        private Node right;
     }
 
     private static int getHeight(Node node) {
-        if(node == null || (node.left == null && node.right == null)) {
+        if (node == null || (node.left == null && node.right == null)) {
             return 0;
         }
 

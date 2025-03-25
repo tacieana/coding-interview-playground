@@ -9,11 +9,11 @@ Runtime: 100.00% - Memory 12.93%
 public class MedianTwoSortedArrays {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 
-        int[] merged  = merge(nums1, nums2);
+        int[] merged = merge(nums1, nums2);
 
-        int i =  merged.length / 2;
-        if(merged.length % 2 == 0) {
-            return (merged[i-1] + merged[i]) / 2D;
+        int i = merged.length / 2;
+        if (merged.length % 2 == 0) {
+            return (merged[i - 1] + merged[i]) / 2D;
         }
 
         return merged[i];

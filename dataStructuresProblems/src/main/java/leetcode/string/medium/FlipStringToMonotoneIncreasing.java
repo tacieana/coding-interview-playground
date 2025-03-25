@@ -3,7 +3,8 @@ package leetcode.string.medium;
 public class FlipStringToMonotoneIncreasing {
     public int minFlipsMonoIncr(String s) {
         int flips = 0;
-        int min = 0, max = s.length()-1;
+        int min = 0;
+        int max = s.length()-1;
         char[] chars = s.toCharArray();
 
         while (min <= max){

@@ -20,10 +20,17 @@ public class RelativeRanks {
         while (!heap.isEmpty()) {
             Rank actual = heap.poll();
             switch (i) {
-                case 1: result[actual.index] = "Gold Medal"; break;
-                case 2: result[actual.index] = "Silver Medal"; break;
-                case 3: result[actual.index] = "Bronze Medal"; break;
-                default: result[actual.index] = String.valueOf(i);
+                case 1:
+                    result[actual.index] = "Gold Medal";
+                    break;
+                case 2:
+                    result[actual.index] = "Silver Medal";
+                    break;
+                case 3:
+                    result[actual.index] = "Bronze Medal";
+                    break;
+                default:
+                    result[actual.index] = String.valueOf(i);
             }
             i++;
         }

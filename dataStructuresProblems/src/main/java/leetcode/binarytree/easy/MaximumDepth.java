@@ -12,7 +12,7 @@ public class MaximumDepth {
 
     private int calcDepth(TreeNode root) {
         if (root == null) {
-            return  0;
+            return 0;
         }
 
         int leftDepth = calcDepth(root.left);

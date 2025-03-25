@@ -1,11 +1,12 @@
 package theoryexamples;
 
 import model.Node;
+
 import java.util.Stack;
 
 public class BinaryTreeDepthFirstSearch {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Node<Integer> n0 = new Node(0);
         Node<Integer> n1 = new Node(1);
         Node<Integer> n2 = new Node(2);
@@ -44,10 +45,10 @@ public class BinaryTreeDepthFirstSearch {
     }
 
     private static void printPreOrderStack(Node<Integer> root) {
-        Stack<Node<Integer>> stack = new Stack();
+        Stack<Node<Integer>> stack = new Stack<>();
         stack.push(root);
 
-        while(!stack.isEmpty()) {
+        while (!stack.isEmpty()) {
             Node<Integer> current = stack.pop();
             if (current != null) {
                 System.out.println(current.getValue());
@@ -63,7 +64,7 @@ public class BinaryTreeDepthFirstSearch {
         Stack<Node<Integer>> stack = new Stack();
         Node<Integer> current = root;
 
-        while(current != null || !stack.isEmpty()) {
+        while (current != null || !stack.isEmpty()) {
             while (current != null) {
                 stack.push(current);
                 current = current.getLeft();
@@ -84,20 +85,20 @@ public class BinaryTreeDepthFirstSearch {
         Node<Integer> current;
         stack.push(root);
 
-        while(!stack.isEmpty()) {
+        while (!stack.isEmpty()) {
             current = stack.pop();
             output.push(current);
 
-            if(current.getLeft() != null) {
+            if (current.getLeft() != null) {
                 stack.push(current.getLeft());
             }
 
-            if(current.getRight() != null) {
+            if (current.getRight() != null) {
                 stack.push(current.getRight());
             }
         }
 
-        while(!output.isEmpty()) {
+        while (!output.isEmpty()) {
             System.out.println(output.pop().getValue());
         }
 

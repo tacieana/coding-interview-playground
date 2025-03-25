@@ -6,14 +6,16 @@ import java.util.HashMap;
 // Runtime: 61.35% / Memory: 84.35%
 public class LRUCache {
 
-    private int capacity, size;
+    private int capacity;
+    private int size;
     private HashMap<Integer,Node> values;
-    Node first, last;
+    Node first;
+    Node last;
 
     public LRUCache(int capacity) {
         this.capacity = capacity;
         size = 0;
-        values = new HashMap();
+        values = new HashMap<>();
         first = new Node(-1,-1);
         last = new Node(-1,-1);
         first.next = last;
@@ -70,8 +72,10 @@ public class LRUCache {
     }
 
     private class Node {
-        public int key, value;
-        public Node previous, next;
+        private int key;
+        private int value;
+        private Node previous;
+        private Node next;
 
         public Node(int key, int value) {
             this.key = key;

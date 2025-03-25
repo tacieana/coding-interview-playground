@@ -13,14 +13,14 @@ Memory 44.31%
  */
 public class MergeSortedArray {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         MergeSortedArray mergeSortedArray = new MergeSortedArray();
-        int[] nums1 = new int[]{4,3,2,1,0,0,0,0,0};
-        int[] nums2 = new int[]{9,8,7,6,5};
+        int[] nums1 = new int[]{4, 3, 2, 1, 0, 0, 0, 0, 0};
+        int[] nums2 = new int[]{9, 8, 7, 6, 5};
 
         mergeSortedArray.merge(nums1, 4, nums2, nums2.length);
 
-        for(int i = 0; i < nums1.length; i++) {
+        for (int i = 0; i < nums1.length; i++) {
             System.out.println(nums1[i]);
         }
     }
@@ -31,20 +31,16 @@ public class MergeSortedArray {
     }
 
     private void mergeSort(int[] array) {
-        if(array == null || array.length < 2) return;
+        if (array == null || array.length < 2) return;
 
         int size = array.length;
-        int middle = size/2;
+        int middle = size / 2;
         int[] left = new int[middle];
-        int[] right = new int[size-middle];
+        int[] right = new int[size - middle];
 
-        for(int i = 0; i < middle; i++) {
-            left[i] = array[i];
-        }
+        System.arraycopy(array, 0, left, 0, middle);
 
-        for(int i = middle; i < size; i++) {
-            right[i-middle] = array[i];
-        }
+        if (size - middle >= 0) System.arraycopy(array, middle, right, middle - middle, size - middle);
 
         mergeSort(left);
         mergeSort(right);
@@ -56,8 +52,8 @@ public class MergeSortedArray {
         int i = 0, j = 0, k = 0;
         int leftSize = left.length, rightSize = right.length;
 
-        while(i < leftSize && j < rightSize) {
-            if(left[i] <= right[j]) {
+        while (i < leftSize && j < rightSize) {
+            if (left[i] <= right[j]) {
                 array[k] = left[i];
                 i++;
             } else {
@@ -67,13 +63,13 @@ public class MergeSortedArray {
             k++;
         }
 
-        while(i < leftSize) {
+        while (i < leftSize) {
             array[k] = left[i];
             i++;
             k++;
         }
 
-        while(j < rightSize) {
+        while (j < rightSize) {
             array[k] = right[j];
             j++;
             k++;

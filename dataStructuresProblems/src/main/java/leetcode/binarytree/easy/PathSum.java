@@ -14,24 +14,20 @@ public class PathSum {
     }
 
     private boolean sum(TreeNode node, int sum, int targetSum) {
-        if(node == null) return false;
+        if (node == null) return false;
 
-        if(node.left == null && node.right == null) {
-            if((sum+node.val) == targetSum) {
-                return true;
-            } else {
-                return false;
-            }
+        if (node.left == null && node.right == null) {
+            return (sum + node.val) == targetSum;
         }
         if (node.left == null) {
-            return sum(node.right, sum+node.val, targetSum);
+            return sum(node.right, sum + node.val, targetSum);
         }
 
         if (node.right == null) {
-            return sum(node.left, sum+node.val, targetSum);
+            return sum(node.left, sum + node.val, targetSum);
         }
 
-        return sum(node.left, sum+node.val, targetSum)
-                || sum(node.right, sum+node.val, targetSum);
+        return sum(node.left, sum + node.val, targetSum)
+                || sum(node.right, sum + node.val, targetSum);
     }
 }

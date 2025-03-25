@@ -6,7 +6,7 @@ public class ReverseWordsIII {
 
         StringBuilder stringBuilder = new StringBuilder();
         String[] words = s.split(" ");
-        for(String word : words) {
+        for (String word : words) {
             if (stringBuilder.length() > 0) {
                 stringBuilder.append(" ");
             }
@@ -17,7 +17,7 @@ public class ReverseWordsIII {
 
     private String reverse(String s) {
         StringBuilder stringBuilder = new StringBuilder();
-        for (int i = s.length()-1; i >= 0; i--) {
+        for (int i = s.length() - 1; i >= 0; i--) {
             stringBuilder.append(s.charAt(i));
         }
 

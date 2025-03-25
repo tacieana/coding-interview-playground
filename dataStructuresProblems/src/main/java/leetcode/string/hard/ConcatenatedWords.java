@@ -5,13 +5,9 @@ import java.util.*;
 /*
 Given an array of strings words (without duplicates), return all the concatenated words in the given list of words.
 A concatenated word is defined as a string that is comprised entirely of at least two shorter words (not necessarily distinct) in the given array
-Runtime: / Memory:
+Runtime: 52.89% / Memory:40.49%
  */
 public class ConcatenatedWords {
-
-    public static void main(String args[]) {
-        List<String> teste = findAllConcatenatedWordsInADict(new String[]{"cat","cats","catsdogcats","dog","dogcatsdog","hippopotamuses","rat","ratcatdogcat"});
-    }
 
     public static List<String> findAllConcatenatedWordsInADict(String[] words) {
         Set<String> wordSet = new HashSet<>(Arrays.asList(words));

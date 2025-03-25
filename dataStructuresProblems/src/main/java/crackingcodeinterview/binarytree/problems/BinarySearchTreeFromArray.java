@@ -1,6 +1,6 @@
-package crackingCodeInterview.binaryTree.problems;
+package crackingcodeinterview.binarytree.problems;
 
-import crackingCodeInterview.binaryTree.classes.NodeInteger;
+import crackingcodeinterview.binarytree.classes.NodeInteger;
 
 import java.util.Arrays;
 

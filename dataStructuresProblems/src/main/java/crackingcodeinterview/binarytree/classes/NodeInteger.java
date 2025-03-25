@@ -1,4 +1,4 @@
-package crackingCodeInterview.binaryTree.classes;
+package crackingcodeinterview.binarytree.classes;
 
 public class NodeInteger {
 

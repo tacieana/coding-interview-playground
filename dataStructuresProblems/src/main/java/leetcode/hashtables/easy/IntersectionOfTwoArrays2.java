@@ -3,7 +3,6 @@ package leetcode.hashtables.easy;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /* Given two integer arrays nums1 and nums2, return an array of their intersection.
 Each element in the result must appear as many times as it shows in both arrays
@@ -18,16 +17,16 @@ public class IntersectionOfTwoArrays2 {
         HashMap<Integer, Integer> hashmap2 = new HashMap<>();
 
         for (int i = 0; i < nums1.length; i++) {
-            if(hashmap1.containsKey(nums1[i])) {
-                hashmap1.put(nums1[i], hashmap1.get(nums1[i])+1);
+            if (hashmap1.containsKey(nums1[i])) {
+                hashmap1.put(nums1[i], hashmap1.get(nums1[i]) + 1);
             } else {
                 hashmap1.put(nums1[i], 1);
             }
         }
 
         for (int i = 0; i < nums2.length; i++) {
-            if(hashmap2.containsKey(nums2[i])) {
-                hashmap2.put(nums2[i], hashmap2.get(nums2[i])+1);
+            if (hashmap2.containsKey(nums2[i])) {
+                hashmap2.put(nums2[i], hashmap2.get(nums2[i]) + 1);
             } else {
                 hashmap2.put(nums2[i], 1);
             }

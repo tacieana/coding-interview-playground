@@ -7,13 +7,13 @@ and return false if every element is distinct.
 Runtime 12ms - 49.20% / Memory 58.00MB - 46.08% */
 public class ContainsDuplicate {
     public boolean containsDuplicate(int[] nums) {
-        HashSet<Integer> hash = new HashSet();
+        HashSet<Integer> hash = new HashSet<>();
 
-        for(int i = 0; i < nums.length; i++) {
-            if (hash.contains(nums[i])) {
+        for (int num : nums) {
+            if (hash.contains(num)) {
                 return true;
             }
-            hash.add(nums[i]);
+            hash.add(num);
         }
 
         return false;

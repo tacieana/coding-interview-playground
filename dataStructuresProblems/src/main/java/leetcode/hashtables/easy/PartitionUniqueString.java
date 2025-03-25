@@ -21,16 +21,16 @@ public class PartitionUniqueString {
         for (int i = 0; i < characters.length; i++) {
             char atualCaracter = characters[i];
 
-            if (uniqueStrings.isEmpty()){
+            if (uniqueStrings.isEmpty()) {
                 uniqueStrings.add(String.valueOf(atualCaracter));
             } else {
-                int lastIndex = uniqueStrings.size()-1;
+                int lastIndex = uniqueStrings.size() - 1;
                 String lastString = uniqueStrings.get(lastIndex);
 
-                if (lastString.contains(atualCaracter+"")){
-                    uniqueStrings.add(atualCaracter+"");
+                if (lastString.contains(atualCaracter + "")) {
+                    uniqueStrings.add(atualCaracter + "");
                 } else {
-                    uniqueStrings.set(lastIndex, lastString.concat(atualCaracter+""));
+                    uniqueStrings.set(lastIndex, lastString.concat(atualCaracter + ""));
                 }
             }
         }

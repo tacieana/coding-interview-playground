@@ -1,6 +1,7 @@
 package leetcode.binarytree.medium;
 
 import leetcode.binarytree.classes.TreeNode;
+
 import java.util.Arrays;
 
 /*
@@ -16,19 +17,19 @@ public class BinarySearchTreeFromPreorderTraversalArray {
         }
 
         int val = preorder[0];
-        if(preorder.length == 1) {
+        if (preorder.length == 1) {
             return new TreeNode(val);
         }
 
         int[] left = null, right = null;
         int rightFirstIndex = 1;
-        if(preorder[rightFirstIndex] > val) {
+        if (preorder[rightFirstIndex] > val) {
             right = Arrays.copyOfRange(preorder, 1, preorder.length);
         } else {
-            while(rightFirstIndex < preorder.length && preorder[rightFirstIndex] <= val) {
+            while (rightFirstIndex < preorder.length && preorder[rightFirstIndex] <= val) {
                 rightFirstIndex++;
             }
-            if(rightFirstIndex == preorder.length) {
+            if (rightFirstIndex == preorder.length) {
                 left = Arrays.copyOfRange(preorder, 1, preorder.length);
             } else {
                 left = Arrays.copyOfRange(preorder, 1, rightFirstIndex);

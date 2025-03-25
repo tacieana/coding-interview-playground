@@ -2,7 +2,6 @@ package leetcode.hashtables.easy;
 
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Objects;
 
 /*
 Given an array nums containing n distinct numbers in the range [0, n],
@@ -21,8 +20,8 @@ public class MissingNumber {
     // Runtime Beats 24.75% / Memory Beats 7.74%
     public int missingNumber(int[] nums) {
         HashMap<Integer, Boolean> hashMap = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
-            hashMap.put(nums[i], true);
+        for (int num : nums) {
+            hashMap.put(num, true);
         }
         for (int i = 0; i <= nums.length; i++) {
             if (!hashMap.containsKey(i)) {
@@ -34,7 +33,7 @@ public class MissingNumber {
 
     // Runtime Beats 100.00% / Memory Beats 43.88%
     public int missingNumberV2(int[] nums) {
-        int[] allNumbersVector = new int[nums.length+1];
+        int[] allNumbersVector = new int[nums.length + 1];
         Arrays.fill(allNumbersVector, -1);
 
         for (int i = 0; i < nums.length; i++) {
@@ -42,7 +41,7 @@ public class MissingNumber {
         }
 
         for (int i = 0; i <= nums.length; i++) {
-            if(allNumbersVector[i] == -1) {
+            if (allNumbersVector[i] == -1) {
                 return i;
             }
         }

@@ -24,10 +24,6 @@ public class SymmetricTree {
             return (isMirror(left.left, right.right) && isMirror(right.left, left.right));
         }
 
-        if(left == null && right == null) {
-            return true;
-        }
-
-        return false;
+        return left == null && right == null;
     }
 }

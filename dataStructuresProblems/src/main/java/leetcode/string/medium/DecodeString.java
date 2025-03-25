@@ -9,7 +9,7 @@ Note that k is guaranteed to be a positive integer.
 You may assume that the input string is always valid; there are no extra white spaces, square brackets are well-formed, etc.
 Furthermore, you may assume that the original data does not contain any digits and that digits are only for those repeat numbers, k.
 For example, there will not be input like 3a or 2[4].
-Runtime: 72.56% / Memory 58.47% (primeira solucao usando contactenacao de string com +  deu 24/25)
+Runtime: 72.56% / Memory 58.47% (primeira solucao usando concatenacao de string com +  deu 24/25)
 O codigo esta comentado porque demorei das 16:40 as 19:13 para resolver
  */
 public class DecodeString {

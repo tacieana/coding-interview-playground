@@ -11,7 +11,8 @@ Runtime 100.00% / Memory 62.96%
 */
 public class RightSideView {
 
-    private List<Integer> rightView = new ArrayList();
+    private final List<Integer> rightView = new ArrayList();
+
     public List<Integer> rightSideView(TreeNode root) {
         addView(root, 0);
         return rightView;
@@ -20,10 +21,10 @@ public class RightSideView {
     private void addView(TreeNode node, int currentSize) {
         if (node == null) return;
 
-        if(currentSize == rightView.size()) {
+        if (currentSize == rightView.size()) {
             rightView.add(node.val);
         }
-        addView(node.right, currentSize+1);
-        addView(node.left, currentSize+1);
+        addView(node.right, currentSize + 1);
+        addView(node.left, currentSize + 1);
     }
 }

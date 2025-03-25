@@ -1,6 +1,7 @@
 package theoryexamples;
 
 import model.Node;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -11,7 +12,7 @@ public class BinaryTreeBreadthFirstSearch {
         Queue<Node<Integer>> queue = new LinkedList<>();
         queue.add(root);
 
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             Node<Integer> currentNode = queue.poll();
             System.out.println(currentNode.getValue());
 

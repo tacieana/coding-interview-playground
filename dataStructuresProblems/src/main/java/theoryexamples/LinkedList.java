@@ -16,15 +16,6 @@ public class LinkedList<T> {
         }
     }
 
-    public void addAt(int index, Node<T> node) {
-
-        int count = 0;
-        Node positionToInsert = head;
-        while (count < index && positionToInsert != null) {
-
-        }
-    }
-
     public void addFirst(Node<T> node) {
         node.setRight(head);
         head.setLeft(node);

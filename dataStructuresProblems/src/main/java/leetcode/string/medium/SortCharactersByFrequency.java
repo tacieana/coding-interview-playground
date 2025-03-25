@@ -10,7 +10,7 @@ Runtime: 35.84% / Memory: 84.36%
  */
 public class SortCharactersByFrequency {
 
-        public String frequencySort(String s) {
+    public String frequencySort(String s) {
 
         HashMap<Character, Integer> frequencyCharHash = new HashMap<>();
 
@@ -22,11 +22,16 @@ public class SortCharactersByFrequency {
 
         PriorityQueue<CharFrequency> heap = new PriorityQueue<>((a,b) -> b.frequency - a.frequency);
 
-        frequencyCharHash.forEach((key, value) -> {
-            heap.offer(new CharFrequency(key, value));
-        });
+        frequencyCharHash.forEach((key, value) ->
+            heap.offer(new CharFrequency(key, value)));
+
+        return getString(heap);
+    }
+
+    private String getString(PriorityQueue<CharFrequency> heap) {
 
         StringBuilder stringBuilder = new StringBuilder();
+
         while (!heap.isEmpty()) {
             CharFrequency currentChar = heap.poll();
 
@@ -36,17 +41,16 @@ public class SortCharactersByFrequency {
         }
 
         return stringBuilder.toString();
-
     }
 
     private class CharFrequency {
-            public char value;
-            public int frequency;
+        private char value;
+        private int frequency;
 
-            CharFrequency(char value, int frequency) {
-                this.value = value;
-                this.frequency = frequency;
-            }
+        CharFrequency(char value, int frequency) {
+            this.value = value;
+            this.frequency = frequency;
+        }
 
     }
 }

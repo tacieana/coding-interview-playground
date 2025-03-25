@@ -5,20 +5,20 @@ import java.util.PriorityQueue;
 
 public class MedianFinder {
 
-    public static void main(String args[]) {
+    PriorityQueue<Integer> maxHeap;
+    PriorityQueue<Integer> minHeap;
+    public MedianFinder() {
+        maxHeap = new PriorityQueue(Collections.reverseOrder());
+        minHeap = new PriorityQueue();
+    }
+
+    public static void main(String[] args) {
         MedianFinder medianFinder = new MedianFinder();
         medianFinder.addNum(1);
         medianFinder.addNum(2);
         medianFinder.addNum(3);
 
         Double median = medianFinder.findMedian();
-    }
-    PriorityQueue<Integer> maxHeap;
-    PriorityQueue<Integer> minHeap;
-
-    public MedianFinder() {
-        maxHeap = new PriorityQueue(Collections.reverseOrder());
-        minHeap = new PriorityQueue();
     }
 
     public void addNum(int num) {

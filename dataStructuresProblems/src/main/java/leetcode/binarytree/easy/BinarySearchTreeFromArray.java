@@ -21,13 +21,13 @@ public class BinarySearchTreeFromArray {
             return new TreeNode(nums[1], new TreeNode(nums[0]), null);
         }
 
-        int rootIndex = nums.length/2;
+        int rootIndex = nums.length / 2;
         if ((nums.length % 2) == 0) {
-            rootIndex = ((nums.length/2) -1);
+            rootIndex = ((nums.length / 2) - 1);
         }
 
         int[] leftArray = Arrays.copyOfRange(nums, 0, rootIndex);
-        int[] rightArray = Arrays.copyOfRange(nums, rootIndex+1, nums.length);
+        int[] rightArray = Arrays.copyOfRange(nums, rootIndex + 1, nums.length);
 
         return new TreeNode(
                 nums[rootIndex],

@@ -12,10 +12,12 @@ Given the root of a binary tree, return the maximum path sum of any non-empty pa
 public class MaximumPathSum {
 
     private int maxSum = Integer.MIN_VALUE;
+
     public int maxPathSum(TreeNode root) {
         sum(root);
         return maxSum;
     }
+
     private int sum(TreeNode node) {
         if (node == null) return 0;
 

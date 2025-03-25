@@ -10,14 +10,6 @@ Runtime: 10.17% / Memory: 53.70%
  */
 public class MergeSortedLists {
 
-    public static void main(String args[]) {
-        ListNode[] lists = new ListNode[2];
-        lists[0] = new ListNode(1);
-        lists[1] = new ListNode(0);
-
-        MergeSortedLists mergeLists = new MergeSortedLists();
-        mergeLists.mergeKLists(lists);
-    }
     ListNode mergedList;
 
     public ListNode mergeKLists(ListNode[] lists) {
@@ -28,8 +20,6 @@ public class MergeSortedLists {
             return mergedList;
         }
 
-
-        int total = lists.length;
         int k = 0;
 
         while (k < lists.length) {
